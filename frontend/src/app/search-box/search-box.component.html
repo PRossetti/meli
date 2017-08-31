@@ -1,0 +1,12 @@
+<div class="search-box">
+    <div class="col-md-1"></div>
+    <div class="col-md-10 m-t-5">
+        <div class="col-md-1"><img class="logo" src="../../assets/logo.png"></div>
+        <div class="input-group">
+            <input type="text" class="form-control" #searchBox id="search-box" [ngModel]="query" (keyup.enter)="goToResults(searchBox.value)" placeholder="Nunca dejes de buscar">
+            <span class="input-group-addon" (click)="goToResults(searchBox.value)">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </span>
+        </div>
+    </div>
+</div>

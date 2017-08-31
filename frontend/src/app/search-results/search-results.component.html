@@ -1,0 +1,39 @@
+<app-search-box></app-search-box>
+<div *ngIf="products" class="col-md-12 m-t-61">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 m-b-16 categories">
+            <span class="category" title="{{category}}" *ngFor="let category of products.categories; let last = last" [class.last]="last">
+            {{ category }}
+        </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10" *ngIf="products.items.length > 0">
+            <li class="result-item" *ngFor="let product of products.items">
+                <div class="col-md-3 n-m-r" [routerLink]="['/items', product.id]"><img class="picture" src="{{product.picture}}" /></div>
+                <div class="col-md-7 price">
+                    <div class="inline-block">{{ product.price.currency == 'ARS' ? '$ ' : ''}}{{ formatNumber(product.price.amount) }}</div>
+                    <div [hidden]="!product.free_shipping" class="inline-block"><img class="shipping" src="../../assets/ic_shipping.png" /></div>
+                </div>
+                <div class="col-md-2 location">
+                    Capital Federal
+                </div>
+                <div class="col-md-9 p-l-1">
+                    <div class="col-md-5 title" [routerLink]="['/items', product.id]">
+                        {{ product.title }}
+                    </div>
+                </div>
+            </li>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div *ngIf="products.items.length == 0" class="result-item">
+        <h4 class="error">No hay publicaciones que coincidan con tu búsqueda.</h4>
+        <ul>
+            <li>Revisa la ortografía de la palabra.</li>
+            <li>Utiliza palabras más genéricas o menos palabras.</li>
+        </ul>
+    </div>
+</div>
