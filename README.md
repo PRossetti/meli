@@ -1,8 +1,12 @@
 # meli
 MELI Mini WebApp
 
+Ejecutar npm install para ambos directorios (backend y frontend) de modo que se instalen las dependencias necesarias.
+
 Para correr el servidor, posicionarse en la raiz del proyecto backend desde la CLI y ejecutar:
 node server.js
+
+Si no tiene los modulos de node 
 
 Con la configuración actual, el servidor estará escuchando en el puerto 3000. El puerto es configurable desde el archivo config.js
 
