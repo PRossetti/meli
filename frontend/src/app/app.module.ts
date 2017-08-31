@@ -11,7 +11,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 import { ProductService } from './services/product.service';
 import { DataService } from './services/data.service';
-import { CommonService } from './services/common.service';
 
 import { RoutingModule } from './routing/routing.module';
 
@@ -30,7 +29,7 @@ import { RoutingModule } from './routing/routing.module';
     HttpModule,
     FormsModule
   ],
-  providers: [ProductService, DataService, CommonService],
+  providers: [ProductService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
