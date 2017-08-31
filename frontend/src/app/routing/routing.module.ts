@@ -9,7 +9,6 @@ import { ProductDetailComponent } from '../product-detail/product-detail.compone
 import { NotFoundComponent } from '../not-found/not-found.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '', component: SearchBoxComponent },
   { path: 'items/:id', component: ProductDetailComponent },
   { path: 'items', component: SearchResultsComponent },
