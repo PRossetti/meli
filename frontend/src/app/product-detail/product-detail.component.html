@@ -1,0 +1,23 @@
+<app-search-box></app-search-box>
+<div class="col-md-1"></div>
+<div class="col-md-10 m-t-45 center-block">
+    <div *ngIf="product" class="item-detail col-md-12" >
+        <div class="col-md-8 p-t-32"><img src="{{product.picture}}"></div>
+        <div class="col-md-3 p-r-0">
+            <div class="col-md-12 p-t-32 p-l-0 condition-solds">
+                {{ product.condition == 'new' ? 'Nuevo' : 'Usado' }} - {{ product.sold_quantity }} {{ product.sold_quantity == 1 ? ' vendido' : ' vendidos'}}
+            </div>
+            <div class="col-md-10 p-t-16 p-l-0 detail-title">
+                {{product.title}}
+            </div>
+            <div class="col-md-12 p-b-32 p-t-32 p-r-0 p-l-0 price">
+                {{ product.price.currency == 'ARS' ? '$ ' : '' }}{{ formatNumber(product.price.amount) }}<sup [hidden]="product.price.decimals == 0" class="decimals">{{product.price.decimals}}</sup>
+            </div>
+            <button type="button" class="col-md-10 btn btn-primary buy">Comprar</button>
+        </div>
+        <div class="col-md-9 p-l-32 desc">
+            <div class="p-t-16 p-b-32 title">Descripción del producto</div>
+            <div class="p-b-32" [innerHTML]="product.description"></div>
+        </div>
+    </div>
+</div>
